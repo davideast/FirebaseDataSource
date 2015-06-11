@@ -1,7 +1,11 @@
-# Syncing Data with UITableView and Firebase
+# FirebaseDataSource - Syncing Data with UIKit controls and Firebase
 This repo shows two examples of syncing data with UITableView and Firebase. 
 
-There is a short tutorial at the bottom of the readme.
+#### Installation
+FirebaseDataSource uses CocoaPods to manage the Firebase dependency.
+```bash
+pod install
+```
 
 ## RefViewController
 The RefViewController demonstrates the process of manually syncing data from Firebase to a UITableView. 
