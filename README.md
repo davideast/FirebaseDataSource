@@ -182,7 +182,7 @@ func firebaseDataSource(firebaseDataSource: FirebaseDataSource, itemRemovedAtInd
 }
 ```
 
-#### `itemMovedAtIndexPath`
+##### `itemMovedAtIndexPath`
 When an item has been moved, we can specify the old `NSIndexPath` position and then the new `NSIndePath` position to move the item to.
 ```swift
 func firebaseDataSource(firebaseDataSource: FirebaseDataSource, itemMovedAtIndexPath: NSIndexPath, toIndexPath: NSIndexPath, data: FDataSnapshot) {
