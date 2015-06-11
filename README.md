@@ -139,21 +139,21 @@ From here we can wire up the tableView delegate and firebaseDataSource delegate 
 First, we'll need to provide the row count in the `numberOfRowsInSection` delegate method. 
 The data source should have a length or a count method to provide the rows in section count.
  ```swift
-   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return dataSource.count
-  }
+override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  return dataSource.count
+}
  ```
 
 ##### `cellForRowAtIndexPath`
 Dequeue the cell prototype in the `cellForRowAtIndexPath` delegate method. The tableView delegate has 
 a `cellForRowAtIndexPath` method that fires off every time an item from the data source is updated.
  ```swift
-   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    var cell = tableView.dequeueReusableCellWithIdentifier("<SOME-CELL-IDENTIFIER>") as! UITableViewCell
-    var data: FDataSnapshot! = dataSource[indexPath.row] // dataSource is of [FDataSnapshot]
-    cell.textLabel?.text = data.value["text"] // Assume we are syncing an object with a string property of "text"
-    return cell
-  }
+override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+  var cell = tableView.dequeueReusableCellWithIdentifier("<SOME-CELL-IDENTIFIER>") as! UITableViewCell
+  var data: FDataSnapshot! = dataSource[indexPath.row] // dataSource is of [FDataSnapshot]
+  cell.textLabel?.text = data.value["text"] // Assume we are syncing an object with a string property of "text"
+  return cell
+}
  ```
  
 #### firebaseDataSource delegate
