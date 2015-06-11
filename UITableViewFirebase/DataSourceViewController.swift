@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ViewController: UITableViewController, FirebaseDataSourceDelegate {
+class DataSourceViewController: UITableViewController, FirebaseDataSourceDelegate {
   
   var dataSource: FirebaseDataSource!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    var ref = Firebase(url: "https://todo-service.firebaseio.com/messages")
+    var ref = Firebase(url: "https://uitableview-firebase.firebaseio-demo.com/values")
     dataSource = FirebaseDataSource(ref: ref)
     dataSource.delegate = self
   }
